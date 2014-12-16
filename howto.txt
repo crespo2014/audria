@@ -13,7 +13,7 @@ Full list of capture items is
 
 from pc execute
 
-ssh 10.100.51.32 './audria_arm -f PID,AvgCPUPerc,CurCPUPerc,RunTimeSecs,RunTimeSecs,UserTimePerc,SystemTimePerc,CurWrittenBytesPerSec,CurReadBytesPerSec,CurWriteCalls,CurReadCalls -d 0.005 -e SensorDataServer -n -w long' 
+ssh 10.100.51.32 './audria_arm -f PID,AvgCPUPerc,CurCPUPerc,RunTimeSecs,RunTimeSecs,UserTimePerc,SystemTimePerc,CurWrittenBytesPerSec,CurReadBytesPerSec,CurWriteCalls,CurReadCalls -d 0.005 -e SensorDataServer -n -w long' > profile.txt 
 
 To Executa ean application and get data just run this script
 
