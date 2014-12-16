@@ -1,5 +1,5 @@
-set terminal pngcairo enhanced rounded color size 800,500
-set output "profile_firefox_cpu+mem.png"
+set terminal pngcairo enhanced rounded color size 2000,500
+set output "profile_cpu+mem.png"
 #set terminal svg enhanced rounded size 1600,1000 background rgb "white"
 #set output "profile_cpu+mem.svg"
 
@@ -25,7 +25,7 @@ set y2range[0:]
 
 set datafile separator ","
 
-plot "profile.txt" using (column("RunTimeSecs")):($(column("VmSizekB"))/1024) axes x1y2 title "VirtMem" with filledcurves x1 linecolor 5,\
-     "profile.txt" using (column("RunTimeSecs")):($(column("VmRsskB"))/1024) axes x1y2 title "VMemRSS" with filledcurves x1 linecolor 3,\
+plot "profile.txt" using (column("RunTimeSecs")):((column("VmSizekB"))/1024) axes x1y2 title "VirtMem" with filledcurves x1 linecolor 5,\
+     "profile.txt" using (column("RunTimeSecs")):((column("VmRsskB"))/1024) axes x1y2 title "VMemRSS" with filledcurves x1 linecolor 3,\
      "profile.txt" using (column("RunTimeSecs")):(column("AvgCPUPerc"))  axes x1y1 title "Average CPU" smooth csplines linewidth 1.5 linecolor 8, \
      "profile.txt" using (column("RunTimeSecs")):(column("CurCPUPerc"))  axes x1y1 title "Current CPU" smooth csplines linewidth 1.5 linecolor 1
