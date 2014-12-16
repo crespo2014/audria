@@ -1,1 +1,4 @@
 *.o
+*.o.arm
+audria
+audria_arm
