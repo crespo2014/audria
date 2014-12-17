@@ -11,16 +11,6 @@ Full list of capture items is
 31 CurWrittenBytesPerSec,TotWrittenBytesStorage,CurWrittenBytesStoragePerSec,TotReadCalls,             CurReadCalls,
 36 TotWriteCalls,        CurWriteCalls
 
-
-# 1  Time, 2 Name, 3 State, 4 PID, 5 PPID,
-# 6 PGRP, 7 AvgCPUPerc 8 CurCPUPerc 9 MinFlt 10 MajFlt
-# 11 UserTimeJiffies, 12 SystemTimeJiffies, 13 UserTimePerc, 14 SystemTimePerc, 15 Nice, 
-# 16 Threads, 17  StartTimeJiffies, 19 RunTimeSecs, 20 VmPeakkB, 
-# 20 VmSizekB
-# 21 VmLckkB, 22 VmHWMkB, 23 VmRsskB, 24 VmSwapkB, 25 TotReadBytes, 
-# 26 CurReadBytesPerSec, 27 TotReadBytesStorage, 28 CurReadBytesStoragePerSec, 29 TotWrittenBytes, 30 CurWrittenBytesPerSec
-# 31 TotWrittenBytesStorage, 32 CurWrittenBytesStoragePerSec, 33 TotReadCalls, 34 CurReadCalls, 35 TotWriteCalls, 36 CurWriteCalls
-
 from pc execute
 
 ssh 10.100.51.32 './audria_arm -f PID,AvgCPUPerc,CurCPUPerc,RunTimeSecs,RunTimeSecs,UserTimePerc,SystemTimePerc,CurWrittenBytesPerSec,CurReadBytesPerSec,CurWriteCalls,CurReadCalls,VmSizekB,VmRsskB -d 0.005 -e SensorDataServer -n -w long' > profile.txt 

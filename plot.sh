@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+ echo "Missing input file"
+ exit
+fi
+
 #use this to plot a audria output
 #first parameter is input file.
 # output file are _mem_cpu.png _io.png
@@ -17,7 +22,7 @@ set style fill transparent solid 0.5 border
 
 set xlabel "run time [s]"
 set xrange[0:]
-set xtics 0.5
+set xtics 2
 
 set ylabel "CPU [%]"
 set ytics
@@ -50,7 +55,7 @@ set style fill transparent solid 0.5 border
 
 set xlabel "run time [s]"
 set xrange[0:]
-set xtics 0.5
+set xtics 2
 
 set ylabel "read/write [MB/s]"
 set ytics
@@ -79,7 +84,7 @@ set style fill transparent solid 0.5 border
 
 set xlabel "run time [s]"
 set xrange[0:]
-set xtics 0.5
+set xtics 2
 
 set ylabel "time [%]"
 set ytics
