@@ -2,6 +2,16 @@ How to use audria.
 
 Full list of capture items is
 
+1  Time,                 Name,                  State,                       PID,                      PPID,
+6  PGRP,                 AvgCPUPerc,            CurCPUPerc,                  MinFlt,                   MajFlt,
+11 UserTimeJiffies,      SystemTimeJiffies,     UserTimePerc,                SystemTimePerc,           Priority,
+16 Nice,                 Threads,               StartTimeJiffies,            RunTimeSecs,              VmPeakkB,
+21 VmSizekB,             VmLckkB,               VmHWMkB,                     VmRsskB,                  VmSwapkB,
+26 TotReadBytes,         CurReadBytesPerSec,    TotReadBytesStorage,         CurReadBytesStoragePerSec,TotWrittenBytes,
+31 CurWrittenBytesPerSec,TotWrittenBytesStorage,CurWrittenBytesStoragePerSec,TotReadCalls,             CurReadCalls,
+36 TotWriteCalls,        CurWriteCalls
+
+
 # 1  Time, 2 Name, 3 State, 4 PID, 5 PPID,
 # 6 PGRP, 7 AvgCPUPerc 8 CurCPUPerc 9 MinFlt 10 MajFlt
 # 11 UserTimeJiffies, 12 SystemTimeJiffies, 13 UserTimePerc, 14 SystemTimePerc, 15 Nice, 
@@ -37,4 +47,6 @@ ps -ef | grep $LIST > $1-pids
 PIDS="`ps -e --format "%p,%c" | grep $LIST | grep -v grep | cut -d "," -f 1`"
 
 $AUDRIA -s -f $COLUMNS -d 0.005 $PIDS > $1-audria-out
+
+
 
